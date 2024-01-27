@@ -1,0 +1,82 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"centertext": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod amet laboris ipsum qui id enim exercitation in cupidatat velit pariatur ea id. Velit occaecat ex cillum mollit excepteur dolor tempor ad excepteur commodo dolor quis veniam."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"carrouselImage",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+								"width": 3168,
+								"height": 4752
+							},
+							"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+							"width": 3168,
+							"height": 4752,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"carrouselImage",
+						{
+							"__TYPE__": "ImageContent",
+							"url": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE3MDYzNzE3MDJ8MA&ixlib=rb-4.0.3&q=85",
+							"alt": "ripe pineapple fruit",
+							"origin": {
+								"id": "nAOZCYcLND8",
+								"url": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyfHxmcnVpdHxlbnwwfHx8fDE3MDYzNzE3MDJ8MA&ixlib=rb-4.0.3&q=85",
+								"width": 2749,
+								"height": 4124
+							},
+							"width": 2749,
+							"height": 4124,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	}
+]
