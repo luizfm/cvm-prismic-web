@@ -1,0 +1,61 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"herospancolor": {
+				"__TYPE__": "FieldContent",
+				"value": "#8d5663",
+				"type": "Color"
+			},
+			"herotitle": {
+				"__TYPE__": "FieldContent",
+				"value": "physical",
+				"type": "Text"
+			},
+			"herotitlespan": {
+				"__TYPE__": "FieldContent",
+				"value": "course",
+				"type": "Text"
+			},
+			"herotitlecomplementarytext": {
+				"__TYPE__": "FieldContent",
+				"value": "pale",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"herocarrouselimage",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+								"width": 2747,
+								"height": 4120
+							},
+							"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+							"width": 2747,
+							"height": 4120,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					]
+				]
+			}
+		]
+	}
+]

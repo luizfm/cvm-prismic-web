@@ -1,0 +1,38 @@
+{
+  "id": "navigationmenu",
+  "label": "navigationMenu",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "navigation_itens": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      },
+      "cvmlogo": {
+        "type": "Image",
+        "config": {
+          "label": "CVMLogo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "homelink": {
+        "type": "Link",
+        "config": {
+          "label": "HomeLink",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}

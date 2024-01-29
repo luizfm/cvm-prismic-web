@@ -3,6 +3,12 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  carrousel: dynamic(() => import("./Carrousel")),
+  contact_and_social_media: dynamic(() => import("./ContactAndSocialMedia")),
+  donate: dynamic(() => import("./Donate")),
+  hero: dynamic(() => import("./Hero")),
+  mission_vision_values: dynamic(() => import("./MissionVisionValues")),
+  navigation_itens: dynamic(() => import("./NavigationItens")),
   rich_text: dynamic(() => import("./RichText")),
+  social_impact: dynamic(() => import("./SocialImpact")),
+  stackholders: dynamic(() => import("./Stackholders")),
 };

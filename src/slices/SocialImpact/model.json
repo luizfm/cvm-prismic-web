@@ -1,0 +1,34 @@
+{
+  "id": "social_impact",
+  "type": "SharedSlice",
+  "name": "SocialImpact",
+  "description": "SocialImpact",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "socialimpacttitle": {
+          "type": "Text",
+          "config": {
+            "label": "SocialImpactTitle",
+            "placeholder": ""
+          }
+        },
+        "socialimpactimage": {
+          "type": "Image",
+          "config": {
+            "label": "socialImpactImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "donate",
+  "type": "SharedSlice",
+  "name": "Donate",
+  "description": "Donate",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "donateimage": {
+          "type": "Image",
+          "config": {
+            "label": "donateImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "contact_and_social_media",
+  "type": "SharedSlice",
+  "name": "ContactAndSocialMedia",
+  "description": "ContactAndSocialMedia",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectiontitle": {
+          "type": "Text",
+          "config": {
+            "label": "sectionTitle",
+            "placeholder": ""
+          }
+        },
+        "address": {
+          "type": "Text",
+          "config": {
+            "label": "Address",
+            "placeholder": ""
+          }
+        },
+        "phone": {
+          "type": "Text",
+          "config": {
+            "label": "Phone",
+            "placeholder": ""
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "socialmediaicon": {
+          "type": "Image",
+          "config": {
+            "label": "SocialMediaIcon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "socialmedialink": {
+          "type": "Link",
+          "config": {
+            "label": "SocialMediaLink",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "socialmedialabel": {
+          "type": "Text",
+          "config": {
+            "label": "SocialMediaLabel",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

@@ -4,7 +4,70 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = CarrouselSlice | RichTextSlice;
+type NavigationmenuDocumentDataSlicesSlice = NavigationItensSlice;
+
+/**
+ * Content for navigationMenu documents
+ */
+interface NavigationmenuDocumentData {
+  /**
+   * Slice Zone field in *navigationMenu*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigationmenu.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NavigationmenuDocumentDataSlicesSlice>;
+
+  /**
+   * CVMLogo field in *navigationMenu*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigationmenu.cvmlogo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cvmlogo: prismic.ImageField<never>;
+
+  /**
+   * HomeLink field in *navigationMenu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigationmenu.homelink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  homelink: prismic.LinkField;
+}
+
+/**
+ * navigationMenu document from Prismic
+ *
+ * - **API ID**: `navigationmenu`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavigationmenuDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavigationmenuDocumentData>,
+    "navigationmenu",
+    Lang
+  >;
+
+type PageDocumentDataSlicesSlice =
+  | StackholdersSlice
+  | SocialImpactSlice
+  | DonateSlice
+  | HeroSlice
+  | MissionVisionValuesSlice
+  | ContactAndSocialMediaSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -76,66 +139,380 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = PageDocument;
+export type AllDocumentTypes = NavigationmenuDocument | PageDocument;
 
 /**
- * Primary content in *Carrousel → Primary*
+ * Primary content in *ContactAndSocialMedia → Primary*
  */
-export interface CarrouselSliceDefaultPrimary {
+export interface ContactAndSocialMediaSliceDefaultPrimary {
   /**
-   * centerText field in *Carrousel → Primary*
+   * sectionTitle field in *ContactAndSocialMedia → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: carrousel.primary.centertext
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **API ID Path**: contact_and_social_media.primary.sectiontitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  centertext: prismic.RichTextField;
+  sectiontitle: prismic.KeyTextField;
+
+  /**
+   * Address field in *ContactAndSocialMedia → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_and_social_media.primary.address
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  address: prismic.KeyTextField;
+
+  /**
+   * Phone field in *ContactAndSocialMedia → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_and_social_media.primary.phone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * Email field in *ContactAndSocialMedia → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_and_social_media.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
 }
 
 /**
- * Primary content in *Carrousel → Items*
+ * Primary content in *ContactAndSocialMedia → Items*
  */
-export interface CarrouselSliceDefaultItem {
+export interface ContactAndSocialMediaSliceDefaultItem {
   /**
-   * CarrouselImage field in *Carrousel → Items*
+   * SocialMediaIcon field in *ContactAndSocialMedia → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: carrousel.items[].carrouselImage
+   * - **API ID Path**: contact_and_social_media.items[].socialmediaicon
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  carrouselImage: prismic.ImageField<never>;
+  socialmediaicon: prismic.ImageField<never>;
+
+  /**
+   * SocialMediaLink field in *ContactAndSocialMedia → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_and_social_media.items[].socialmedialink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  socialmedialink: prismic.LinkField;
+
+  /**
+   * SocialMediaLabel field in *ContactAndSocialMedia → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_and_social_media.items[].socialmedialabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  socialmedialabel: prismic.KeyTextField;
 }
 
 /**
- * Default variation for Carrousel Slice
+ * Default variation for ContactAndSocialMedia Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type CarrouselSliceDefault = prismic.SharedSliceVariation<
+export type ContactAndSocialMediaSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<CarrouselSliceDefaultPrimary>,
-  Simplify<CarrouselSliceDefaultItem>
+  Simplify<ContactAndSocialMediaSliceDefaultPrimary>,
+  Simplify<ContactAndSocialMediaSliceDefaultItem>
 >;
 
 /**
- * Slice variation for *Carrousel*
+ * Slice variation for *ContactAndSocialMedia*
  */
-type CarrouselSliceVariation = CarrouselSliceDefault;
+type ContactAndSocialMediaSliceVariation = ContactAndSocialMediaSliceDefault;
 
 /**
- * Carrousel Shared Slice
+ * ContactAndSocialMedia Shared Slice
  *
- * - **API ID**: `carrousel`
- * - **Description**: Carrousel
+ * - **API ID**: `contact_and_social_media`
+ * - **Description**: ContactAndSocialMedia
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type CarrouselSlice = prismic.SharedSlice<
-  "carrousel",
-  CarrouselSliceVariation
+export type ContactAndSocialMediaSlice = prismic.SharedSlice<
+  "contact_and_social_media",
+  ContactAndSocialMediaSliceVariation
+>;
+
+/**
+ * Primary content in *Donate → Primary*
+ */
+export interface DonateSliceDefaultPrimary {
+  /**
+   * donateImage field in *Donate → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: donate.primary.donateimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  donateimage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Donate Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DonateSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DonateSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Donate*
+ */
+type DonateSliceVariation = DonateSliceDefault;
+
+/**
+ * Donate Shared Slice
+ *
+ * - **API ID**: `donate`
+ * - **Description**: Donate
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DonateSlice = prismic.SharedSlice<"donate", DonateSliceVariation>;
+
+/**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * herospancolor field in *Hero → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.herospancolor
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  herospancolor: prismic.ColorField;
+
+  /**
+   * heroTitle field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.herotitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  herotitle: prismic.KeyTextField;
+
+  /**
+   * heroTitleSpan field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.herotitlespan
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  herotitlespan: prismic.KeyTextField;
+
+  /**
+   * heroTitleComplementaryText field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.herotitlecomplementarytext
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  herotitlecomplementarytext: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Hero → Items*
+ */
+export interface HeroSliceDefaultItem {
+  /**
+   * HeroCarrouselImage field in *Hero → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].herocarrouselimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  herocarrouselimage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  Simplify<HeroSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Primary content in *MissionVisionValues → Items*
+ */
+export interface MissionVisionValuesSliceDefaultItem {
+  /**
+   * CardImage field in *MissionVisionValues → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mission_vision_values.items[].cardimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cardimage: prismic.ImageField<never>;
+
+  /**
+   * CardTitle field in *MissionVisionValues → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mission_vision_values.items[].cardtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cardtitle: prismic.KeyTextField;
+
+  /**
+   * CardBody field in *MissionVisionValues → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mission_vision_values.items[].cardbody
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  cardbody: prismic.RichTextField;
+}
+
+/**
+ * Default variation for MissionVisionValues Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MissionVisionValuesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<MissionVisionValuesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *MissionVisionValues*
+ */
+type MissionVisionValuesSliceVariation = MissionVisionValuesSliceDefault;
+
+/**
+ * MissionVisionValues Shared Slice
+ *
+ * - **API ID**: `mission_vision_values`
+ * - **Description**: MissionVisionValues
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MissionVisionValuesSlice = prismic.SharedSlice<
+  "mission_vision_values",
+  MissionVisionValuesSliceVariation
+>;
+
+/**
+ * Primary content in *NavigationItens → Primary*
+ */
+export interface NavigationItensSliceDefaultPrimary {
+  /**
+   * transparency field in *NavigationItens → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_itens.primary.transparency
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  transparency: prismic.SelectField<"1" | "2">;
+}
+
+/**
+ * Primary content in *NavigationItens → Items*
+ */
+export interface NavigationItensSliceDefaultItem {
+  /**
+   * Label field in *NavigationItens → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_itens.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * link field in *NavigationItens → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation_itens.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for NavigationItens Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItensSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavigationItensSliceDefaultPrimary>,
+  Simplify<NavigationItensSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *NavigationItens*
+ */
+type NavigationItensSliceVariation = NavigationItensSliceDefault;
+
+/**
+ * NavigationItens Shared Slice
+ *
+ * - **API ID**: `navigation_itens`
+ * - **Description**: NavigationItens
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItensSlice = prismic.SharedSlice<
+  "navigation_itens",
+  NavigationItensSliceVariation
 >;
 
 /**
@@ -183,6 +560,141 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Primary content in *SocialImpact → Primary*
+ */
+export interface SocialImpactSliceDefaultPrimary {
+  /**
+   * SocialImpactTitle field in *SocialImpact → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_impact.primary.socialimpacttitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  socialimpacttitle: prismic.KeyTextField;
+
+  /**
+   * socialImpactImage field in *SocialImpact → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_impact.primary.socialimpactimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  socialimpactimage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for SocialImpact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialImpactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SocialImpactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SocialImpact*
+ */
+type SocialImpactSliceVariation = SocialImpactSliceDefault;
+
+/**
+ * SocialImpact Shared Slice
+ *
+ * - **API ID**: `social_impact`
+ * - **Description**: SocialImpact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialImpactSlice = prismic.SharedSlice<
+  "social_impact",
+  SocialImpactSliceVariation
+>;
+
+/**
+ * Primary content in *Stackholders → Primary*
+ */
+export interface StackholdersSliceDefaultPrimary {
+  /**
+   * stackholdersTitle field in *Stackholders → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stackholders.primary.stackholderstitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  stackholderstitle: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Stackholders → Items*
+ */
+export interface StackholdersSliceDefaultItem {
+  /**
+   * stackholderImage field in *Stackholders → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stackholders.items[].stackholderimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  stackholderimage: prismic.ImageField<never>;
+
+  /**
+   * stackholderName field in *Stackholders → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stackholders.items[].stackholdername
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  stackholdername: prismic.KeyTextField;
+
+  /**
+   * stackholderLink field in *Stackholders → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stackholders.items[].stackholderlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  stackholderlink: prismic.LinkField;
+}
+
+/**
+ * Default variation for Stackholders Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StackholdersSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StackholdersSliceDefaultPrimary>,
+  Simplify<StackholdersSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Stackholders*
+ */
+type StackholdersSliceVariation = StackholdersSliceDefault;
+
+/**
+ * Stackholders Shared Slice
+ *
+ * - **API ID**: `stackholders`
+ * - **Description**: Stackholders
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StackholdersSlice = prismic.SharedSlice<
+  "stackholders",
+  StackholdersSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -193,19 +705,49 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      NavigationmenuDocument,
+      NavigationmenuDocumentData,
+      NavigationmenuDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
-      CarrouselSlice,
-      CarrouselSliceDefaultPrimary,
-      CarrouselSliceDefaultItem,
-      CarrouselSliceVariation,
-      CarrouselSliceDefault,
+      ContactAndSocialMediaSlice,
+      ContactAndSocialMediaSliceDefaultPrimary,
+      ContactAndSocialMediaSliceDefaultItem,
+      ContactAndSocialMediaSliceVariation,
+      ContactAndSocialMediaSliceDefault,
+      DonateSlice,
+      DonateSliceDefaultPrimary,
+      DonateSliceVariation,
+      DonateSliceDefault,
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceDefaultItem,
+      HeroSliceVariation,
+      HeroSliceDefault,
+      MissionVisionValuesSlice,
+      MissionVisionValuesSliceDefaultItem,
+      MissionVisionValuesSliceVariation,
+      MissionVisionValuesSliceDefault,
+      NavigationItensSlice,
+      NavigationItensSliceDefaultPrimary,
+      NavigationItensSliceDefaultItem,
+      NavigationItensSliceVariation,
+      NavigationItensSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SocialImpactSlice,
+      SocialImpactSliceDefaultPrimary,
+      SocialImpactSliceVariation,
+      SocialImpactSliceDefault,
+      StackholdersSlice,
+      StackholdersSliceDefaultPrimary,
+      StackholdersSliceDefaultItem,
+      StackholdersSliceVariation,
+      StackholdersSliceDefault,
     };
   }
 }

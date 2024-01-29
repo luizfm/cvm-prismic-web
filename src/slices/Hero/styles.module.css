@@ -1,0 +1,25 @@
+.hero {
+    height: calc(100vh - 96px);
+    width: 100%;
+    position: relative;
+
+    .heroTitle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 2;
+        color: white;
+        font-size: 5.75rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .image {
+        object-fit: cover;
+        height: calc(100vh - 96px);
+        width: 100vw;
+    }
+}

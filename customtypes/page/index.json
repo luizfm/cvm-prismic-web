@@ -27,7 +27,22 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "carrousel": {
+            "stackholders": {
+              "type": "SharedSlice"
+            },
+            "social_impact": {
+              "type": "SharedSlice"
+            },
+            "donate": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "mission_vision_values": {
+              "type": "SharedSlice"
+            },
+            "contact_and_social_media": {
               "type": "SharedSlice"
             },
             "rich_text": {

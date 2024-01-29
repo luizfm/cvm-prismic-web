@@ -1,0 +1,50 @@
+{
+  "id": "stackholders",
+  "type": "SharedSlice",
+  "name": "Stackholders",
+  "description": "Stackholders",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "stackholderstitle": {
+          "type": "Text",
+          "config": {
+            "label": "stackholdersTitle",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "stackholderimage": {
+          "type": "Image",
+          "config": {
+            "label": "stackholderImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "stackholdername": {
+          "type": "Text",
+          "config": {
+            "label": "stackholderName",
+            "placeholder": ""
+          }
+        },
+        "stackholderlink": {
+          "type": "Link",
+          "config": {
+            "label": "stackholderLink",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

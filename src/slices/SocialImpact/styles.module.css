@@ -1,0 +1,26 @@
+.socialImpactSection {
+    width: 100%;
+
+    .sectionTitle {
+        color: #3f3f3f;
+        font-size: 60px;
+        text-align: center;
+        margin-bottom: 3.2rem;
+        padding: 2.4rem 0;
+        background-color: #e7cf4c;
+        text-shadow: 0.2rem 0.2rem 0.2rem #000;
+        text-transform: uppercase;
+    }
+
+    .sectionImageWrapper {
+        height: 800px;
+        position: relative;
+
+        .sectionImage {
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+    
+
+}

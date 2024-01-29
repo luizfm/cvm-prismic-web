@@ -1,0 +1,11 @@
+
+.image-wrapper {
+  position: relative;
+  height: calc(100vh - 8.7rem);
+  border-radius: 50%;
+
+  .photo {
+    object-fit: cover;
+    z-index: 1;
+  }
+}
