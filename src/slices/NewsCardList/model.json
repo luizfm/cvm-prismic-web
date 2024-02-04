@@ -1,0 +1,57 @@
+{
+  "id": "news_card_list",
+  "type": "SharedSlice",
+  "name": "NewsCardList",
+  "description": "NewsCardList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectiontitle": {
+          "type": "Text",
+          "config": {
+            "label": "sectionTitle",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "newstitle": {
+          "type": "Text",
+          "config": {
+            "label": "newsTitle",
+            "placeholder": ""
+          }
+        },
+        "newsresume": {
+          "type": "Text",
+          "config": {
+            "label": "newsResume",
+            "placeholder": ""
+          }
+        },
+        "newscoverimage": {
+          "type": "Image",
+          "config": {
+            "label": "newsCoverImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "newslink": {
+          "type": "Link",
+          "config": {
+            "label": "newsLink",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

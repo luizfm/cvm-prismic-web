@@ -1,0 +1,21 @@
+.institutionalVideoSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    row-gap: 64px;
+
+    .sectionTitle {
+        font-size: 32px;
+    }
+
+    .videoContainer {
+        width: 100%;
+    }
+
+    .videoContainer iframe {
+        width: 100%;
+        height: 600px;
+    }
+}

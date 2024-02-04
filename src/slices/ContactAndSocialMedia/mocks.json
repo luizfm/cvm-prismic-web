@@ -68,8 +68,8 @@
 						"socialmedialabel",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "accept",
-							"type": "Text"
+							"type": "Text",
+							"value": "accepttt"
 						}
 					]
 				]

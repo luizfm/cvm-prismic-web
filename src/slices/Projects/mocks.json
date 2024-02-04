@@ -1,0 +1,68 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"sectiontitle": {
+				"__TYPE__": "FieldContent",
+				"value": "felt",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"projectbody",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ex duis pariatur enim cillum nisi cupidatat. Labore dolore voluptate ullamco Lorem adipisicing eu veniam."
+									}
+								}
+							]
+						}
+					],
+					[
+						"projectimagem",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+								"width": 3935,
+								"height": 5894
+							},
+							"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+							"width": 3935,
+							"height": 5894,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"projecttitle",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "realize",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

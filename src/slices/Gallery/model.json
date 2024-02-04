@@ -1,0 +1,50 @@
+{
+  "id": "gallery",
+  "type": "SharedSlice",
+  "name": "Gallery",
+  "description": "Gallery",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectiontitle": {
+          "type": "Text",
+          "config": {
+            "label": "sectionTitle",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "albumimage": {
+          "type": "Image",
+          "config": {
+            "label": "albumImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "albumtitle": {
+          "type": "Text",
+          "config": {
+            "label": "albumTitle",
+            "placeholder": ""
+          }
+        },
+        "albumlink": {
+          "type": "Link",
+          "config": {
+            "label": "albumLink",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

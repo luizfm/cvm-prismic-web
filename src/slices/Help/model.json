@@ -1,0 +1,58 @@
+{
+  "id": "help",
+  "type": "SharedSlice",
+  "name": "Help",
+  "description": "Help",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectiontitle": {
+          "type": "Text",
+          "config": {
+            "label": "sectionTitle",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "helpimage": {
+          "type": "Image",
+          "config": {
+            "label": "helpImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "helptitle": {
+          "type": "Text",
+          "config": {
+            "label": "helpTitle",
+            "placeholder": ""
+          }
+        },
+        "helpdescription": {
+          "type": "Text",
+          "config": {
+            "label": "helpDescription",
+            "placeholder": ""
+          }
+        },
+        "helpbody": {
+          "type": "StructuredText",
+          "config": {
+            "label": "helpBody",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}

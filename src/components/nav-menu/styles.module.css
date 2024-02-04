@@ -37,6 +37,20 @@
                 border-bottom: 1px solid #a0a0a0;
                 color: #a0a0a0;
             }
+
+            .button {
+                padding: 12px 24px;
+                box-sizing: border-box;
+                border-radius: 8px;
+                border: 0;
+                font-size: 24px;
+                background-color: transparent;
+                color: #3f3f3f;
+            }
+
+            .button:hover {
+                background-color: #cdcdcd;
+            }
         }
     }
 }

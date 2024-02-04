@@ -1,0 +1,60 @@
+{
+  "id": "our_history",
+  "type": "SharedSlice",
+  "name": "OurHistory",
+  "description": "OurHistory",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectiontitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "sectiontitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "timelineimage": {
+          "type": "Image",
+          "config": {
+            "label": "timelineImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "timelinetitle": {
+          "type": "Text",
+          "config": {
+            "label": "timelineTitle",
+            "placeholder": ""
+          }
+        },
+        "timelinebody": {
+          "type": "StructuredText",
+          "config": {
+            "label": "timelineBody",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "timelinetitlecolor": {
+          "type": "Color",
+          "config": {
+            "label": "timelineTitleColor",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

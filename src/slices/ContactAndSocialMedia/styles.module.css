@@ -6,13 +6,42 @@
     column-gap: 320px;
     padding: 40px 0;
 
-    .imageWrapper {
-        height: 48px;
-        width: 48px;
-        position: relative;
+    .contactContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        color: #fff;
+        line-height: 24px;
+    }
 
-        .image {
-            object-fit: cover;
+    .socialMediaContainer {
+        display: flex;
+        column-gap: 32px;
+
+        .socialMediaLink {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 16px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .socialMediaLink:hover {
+            background-color: transparent;
+            filter: brightness(0.9);
+        }
+
+        .imageWrapper {
+            height: 48px;
+            width: 48px;
+            position: relative;
+    
+            .image {
+                object-fit: cover;
+            }
         }
     }
+
+    
 }

@@ -20,6 +20,6 @@
     .image {
         object-fit: cover;
         height: calc(100vh - 96px);
-        width: 100vw;
+        width: 100%;
     }
 }

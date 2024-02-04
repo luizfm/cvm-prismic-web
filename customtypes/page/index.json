@@ -27,6 +27,30 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "news_card_list": {
+              "type": "SharedSlice"
+            },
+            "news": {
+              "type": "SharedSlice"
+            },
+            "help": {
+              "type": "SharedSlice"
+            },
+            "photos": {
+              "type": "SharedSlice"
+            },
+            "gallery": {
+              "type": "SharedSlice"
+            },
+            "projects": {
+              "type": "SharedSlice"
+            },
+            "our_history": {
+              "type": "SharedSlice"
+            },
+            "institutional_video": {
+              "type": "SharedSlice"
+            },
             "stackholders": {
               "type": "SharedSlice"
             },

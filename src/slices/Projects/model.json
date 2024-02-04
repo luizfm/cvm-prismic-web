@@ -1,0 +1,51 @@
+{
+  "id": "projects",
+  "type": "SharedSlice",
+  "name": "Projects",
+  "description": "Projects",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectiontitle": {
+          "type": "Text",
+          "config": {
+            "label": "sectionTitle",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "projecttitle": {
+          "type": "Text",
+          "config": {
+            "label": "projectTitle",
+            "placeholder": ""
+          }
+        },
+        "projectbody": {
+          "type": "StructuredText",
+          "config": {
+            "label": "projectBody",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "projectimagem": {
+          "type": "Image",
+          "config": {
+            "label": "projectImagem",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

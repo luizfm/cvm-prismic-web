@@ -1,0 +1,43 @@
+.navigationRoot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+
+  .navigationList {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 4px;
+    border-radius: 6px;
+    list-style: none;
+    margin: 0;
+  }
+
+  .navigationContent {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    min-width: 200px;
+    animation-duration: 250ms;
+    background-color: #fff;
+    border-radius: 0.8rem;
+    animation-timing-function: ease;
+
+    .navigationLink {
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #3f3f3f;
+      box-shadow: 0 2px 10px #a09f9f;
+    }
+
+    .navigationLink:hover {
+      background-color: #cdcdcd;
+    }
+  }
+}

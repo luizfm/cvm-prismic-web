@@ -1,0 +1,43 @@
+{
+  "id": "news",
+  "type": "SharedSlice",
+  "name": "News",
+  "description": "News",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "newstitle": {
+          "type": "Text",
+          "config": {
+            "label": "newsTitle",
+            "placeholder": ""
+          }
+        },
+        "newsbody": {
+          "type": "StructuredText",
+          "config": {
+            "label": "newsBody",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "newscoverimage": {
+          "type": "Image",
+          "config": {
+            "label": "newsCoverImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

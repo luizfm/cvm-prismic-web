@@ -1,0 +1,9 @@
+.footerContainer {
+    background-color: #3a8bbe;
+
+    .copyRight {
+        color: white;
+        text-align: center;
+        padding: 64px 0;
+    }
+}

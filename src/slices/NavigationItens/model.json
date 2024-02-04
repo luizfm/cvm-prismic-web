@@ -12,15 +12,26 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "transparency": {
-          "type": "Select",
+        "dropdownmenulabel": {
+          "type": "Text",
           "config": {
-            "label": "transparency",
+            "label": "dropdownMenuLabel",
+            "placeholder": ""
+          }
+        },
+        "drodpownmenuitem": {
+          "type": "Text",
+          "config": {
+            "label": "drodpownMenuItem",
+            "placeholder": ""
+          }
+        },
+        "dropdownmenuitemlink": {
+          "type": "Link",
+          "config": {
+            "label": "dropdownMenuItemLink",
             "placeholder": "",
-            "options": [
-              "1",
-              "2"
-            ]
+            "select": null
           }
         }
       },

@@ -3,10 +3,22 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"transparency": {
+			"dropdownmenulabel": {
 				"__TYPE__": "FieldContent",
-				"value": "2",
-				"type": "Select"
+				"value": "particular",
+				"type": "Text"
+			},
+			"drodpownmenuitem": {
+				"__TYPE__": "FieldContent",
+				"value": "torn",
+				"type": "Text"
+			},
+			"dropdownmenuitemlink": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
 			}
 		},
 		"items": [

@@ -1,0 +1,33 @@
+{
+  "id": "institutional_video",
+  "type": "SharedSlice",
+  "name": "InstitutionalVideo",
+  "description": "InstitutionalVideo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "sectiontitle": {
+          "type": "Text",
+          "config": {
+            "label": "sectionTitle",
+            "placeholder": ""
+          }
+        },
+        "videourl": {
+          "type": "Embed",
+          "config": {
+            "label": "videoUrl",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
