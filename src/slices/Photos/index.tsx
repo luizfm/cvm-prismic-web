@@ -37,8 +37,8 @@ const Photos = ({ slice }: PhotosProps): JSX.Element => {
             key={`${index}`}
             field={photo.picture}
             className={styles["image"]}
-            height={160}
-            width={160}
+            height={180}
+            width={180}
             onClick={() => onPhotoClick(photo.picture)}
           />
         ))}

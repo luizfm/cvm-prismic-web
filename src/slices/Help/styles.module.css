@@ -1,9 +1,8 @@
 .helpSection {
-    height: calc(100vh - 87px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 64px;
+    padding: 120px 0;
 
     .sectionTitle {
         color: black;
@@ -12,6 +11,7 @@
 
     .helpItemsContainer {
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         width: 100%;
         padding-top: 64px;
@@ -28,6 +28,8 @@
             align-items: center;
             width: 100%;
             max-width: 240px;
+            position: relative;
+            padding-bottom: 64px;
             
             .helpItemImageContainer {
                 position: relative;
@@ -43,7 +45,7 @@
                 margin-top: -48px;
 
                 .image {
-                    object-fit: cover;
+                    object-fit: contain;
                 }
             }
 
@@ -60,7 +62,6 @@
             }
 
             .button {
-                margin: 32px 0 -16px;
                 height: 48px;
                 width: 240px;
                 border: 0;
@@ -68,6 +69,10 @@
                 background-color: white;
                 border-bottom-left-radius: 8px;
                 border-bottom-right-radius: 8px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
             }
 
             .button:hover {
