@@ -1,0 +1,28 @@
+{
+  "id": "companymediashare",
+  "label": "companyMediaShare",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "social_media": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

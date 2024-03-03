@@ -27,6 +27,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "project_and_subprojects": {
+              "type": "SharedSlice"
+            },
             "news_card_list": {
               "type": "SharedSlice"
             },

@@ -15,8 +15,10 @@ export const components = {
   news_card_list: dynamic(() => import("./NewsCardList")),
   our_history: dynamic(() => import("./OurHistory")),
   photos: dynamic(() => import("./Photos")),
+  project_and_subprojects: dynamic(() => import("./ProjectAndSubprojects")),
   projects: dynamic(() => import("./Projects")),
   rich_text: dynamic(() => import("./RichText")),
   social_impact: dynamic(() => import("./SocialImpact")),
+  social_media: dynamic(() => import("./SocialMedia")),
   stackholders: dynamic(() => import("./Stackholders")),
 };

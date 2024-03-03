@@ -12,12 +12,13 @@ const leagueSpartan = League_Spartan({
   weight: ["400", "500", "700"],
 });
 
+export const client = createClient();
+
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const client = createClient();
   const navigationMenu = await client.getByType("navigationmenu");
 
   const navItems = navigationMenu.results[0].data.slices[0]?.items ?? [];

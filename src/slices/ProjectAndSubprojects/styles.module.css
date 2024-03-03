@@ -1,0 +1,87 @@
+.sectionContainer {
+    display: flex;
+    row-gap: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 64px 0;
+
+    .sectionTitle {
+        margin-bottom: 32px;
+    }
+
+    .sectionBodyText {
+        max-width: 800px;
+        line-height: 24px;
+    }
+
+    .mainProjectImage {
+        border-radius: 16px;
+    }
+
+    .projectContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    
+        .projectLink {
+            display: block;
+            text-decoration: none;
+            color: #3f3f3f;
+            height: inherit;
+        }
+    
+        .project {
+            display: flex;
+            flex-direction: column;
+            border-radius: 16px;
+            width: 240px;
+            height: 100%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+            .projectImage {
+                position: relative;
+                width: 240px;
+                height: 160px;
+                min-height: 160px;
+                overflow: hidden;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+    
+                .image {
+                    object-fit: cover;
+                    border-top-left-radius: 16px;
+                    border-top-right-radius: 16px;
+                    z-index: 2;
+                }
+            }
+    
+    
+    
+            .projectTitle {
+                font-size: 20px;
+                line-height: 28px;
+    
+            }
+    
+            .projectFooter {
+                padding: 16px 16px;
+                height: 100%;
+                width: 100%;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+        }
+    
+        .project:hover {
+            background-color: rgb(216, 214, 214);
+    
+            .image {
+                transform: scale(1.5);
+                transition: all 5s ease-in-out;
+            }
+        }
+    }
+}

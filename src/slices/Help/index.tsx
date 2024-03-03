@@ -5,9 +5,13 @@ import { SliceComponentProps } from "@prismicio/react";
 
 import styles from "./styles.module.css";
 import { PrismicNextImage } from "@prismicio/next";
-import { useCallback, useState } from "react";
-import { Simplify } from "../../../prismicio-types";
+import { useCallback, useEffect, useState } from "react";
+import {
+  Simplify,
+  SocialMediaSliceDefaultItem,
+} from "../../../prismicio-types";
 import { HelpModal } from "@/components/help-modal";
+import { client } from "@/app/layout";
 
 /**
  * Props for `Help`.
@@ -21,12 +25,28 @@ const Help = ({ slice }: HelpProps): JSX.Element => {
   const [currentHelpItem, setCurrentHelpItem] =
     useState<Simplify<Content.HelpSliceDefaultItem> | null>(null);
 
+  const [socialMediaContent, setSocialMediaContent] = useState<
+    Simplify<SocialMediaSliceDefaultItem>[] | undefined
+  >(undefined);
+
   const onHelpClick = useCallback(
     (item?: Simplify<Content.HelpSliceDefaultItem>) => {
       setCurrentHelpItem(item ?? null);
     },
     []
   );
+
+  useEffect(() => {
+    const loadSocialMediaContent = async () => {
+      const socialMediaContent = await client.getByType("companymediashare");
+
+      setSocialMediaContent(
+        socialMediaContent.results[0].data.slices[0]?.items
+      );
+    };
+
+    loadSocialMediaContent();
+  }, []);
 
   return (
     <section
@@ -67,6 +87,7 @@ const Help = ({ slice }: HelpProps): JSX.Element => {
           onClose={onHelpClick}
           item={currentHelpItem}
           open={!!currentHelpItem}
+          socialMediaContent={socialMediaContent}
         />
       )}
     </section>

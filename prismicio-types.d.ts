@@ -4,6 +4,40 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type CompanymediashareDocumentDataSlicesSlice = SocialMediaSlice;
+
+/**
+ * Content for companyMediaShare documents
+ */
+interface CompanymediashareDocumentData {
+  /**
+   * Slice Zone field in *companyMediaShare*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: companymediashare.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CompanymediashareDocumentDataSlicesSlice>;
+}
+
+/**
+ * companyMediaShare document from Prismic
+ *
+ * - **API ID**: `companymediashare`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CompanymediashareDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CompanymediashareDocumentData>,
+    "companymediashare",
+    Lang
+  >;
+
 type NavigationmenuDocumentDataSlicesSlice = NavigationItensSlice;
 
 /**
@@ -61,6 +95,7 @@ export type NavigationmenuDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ProjectAndSubprojectsSlice
   | NewsCardListSlice
   | NewsSlice
   | HelpSlice
@@ -147,7 +182,10 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = NavigationmenuDocument | PageDocument;
+export type AllDocumentTypes =
+  | CompanymediashareDocument
+  | NavigationmenuDocument
+  | PageDocument;
 
 /**
  * Primary content in *ContactAndSocialMedia → Primary*
@@ -439,6 +477,16 @@ export interface HelpSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   helpbody: prismic.RichTextField;
+
+  /**
+   * helpBodyAdditionalImage field in *Help → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: help.items[].helpbodyadditionalimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  helpbodyadditionalimage: prismic.ImageField<never>;
 }
 
 /**
@@ -1065,6 +1113,106 @@ type PhotosSliceVariation = PhotosSliceDefault;
 export type PhotosSlice = prismic.SharedSlice<"photos", PhotosSliceVariation>;
 
 /**
+ * Primary content in *ProjectAndSubprojects → Primary*
+ */
+export interface ProjectAndSubprojectsSliceDefaultPrimary {
+  /**
+   * title field in *ProjectAndSubprojects → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_and_subprojects.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * projectBody field in *ProjectAndSubprojects → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_and_subprojects.primary.projectbody
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  projectbody: prismic.RichTextField;
+
+  /**
+   * projectImage field in *ProjectAndSubprojects → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_and_subprojects.primary.projectimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  projectimage: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ProjectAndSubprojects → Items*
+ */
+export interface ProjectAndSubprojectsSliceDefaultItem {
+  /**
+   * projectTitle field in *ProjectAndSubprojects → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_and_subprojects.items[].projecttitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  projecttitle: prismic.KeyTextField;
+
+  /**
+   * projectImage field in *ProjectAndSubprojects → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_and_subprojects.items[].projectimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  projectimage: prismic.ImageField<never>;
+
+  /**
+   * projectLink field in *ProjectAndSubprojects → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_and_subprojects.items[].projectlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  projectlink: prismic.LinkField;
+}
+
+/**
+ * Default variation for ProjectAndSubprojects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectAndSubprojectsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectAndSubprojectsSliceDefaultPrimary>,
+  Simplify<ProjectAndSubprojectsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ProjectAndSubprojects*
+ */
+type ProjectAndSubprojectsSliceVariation = ProjectAndSubprojectsSliceDefault;
+
+/**
+ * ProjectAndSubprojects Shared Slice
+ *
+ * - **API ID**: `project_and_subprojects`
+ * - **Description**: ProjectAndSubprojects
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectAndSubprojectsSlice = prismic.SharedSlice<
+  "project_and_subprojects",
+  ProjectAndSubprojectsSliceVariation
+>;
+
+/**
  * Primary content in *Projects → Primary*
  */
 export interface ProjectsSliceDefaultPrimary {
@@ -1245,6 +1393,71 @@ export type SocialImpactSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SocialMedia → Items*
+ */
+export interface SocialMediaSliceDefaultItem {
+  /**
+   * socialLink field in *SocialMedia → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.items[].sociallink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  sociallink: prismic.LinkField;
+
+  /**
+   * socialLogo field in *SocialMedia → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.items[].sociallogo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  sociallogo: prismic.ImageField<never>;
+
+  /**
+   * socialName field in *SocialMedia → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.items[].socialname
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  socialname: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for SocialMedia Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialMediaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<SocialMediaSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *SocialMedia*
+ */
+type SocialMediaSliceVariation = SocialMediaSliceDefault;
+
+/**
+ * SocialMedia Shared Slice
+ *
+ * - **API ID**: `social_media`
+ * - **Description**: SocialMedia
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialMediaSlice = prismic.SharedSlice<
+  "social_media",
+  SocialMediaSliceVariation
+>;
+
+/**
  * Primary content in *Stackholders → Primary*
  */
 export interface StackholdersSliceDefaultPrimary {
@@ -1334,6 +1547,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      CompanymediashareDocument,
+      CompanymediashareDocumentData,
+      CompanymediashareDocumentDataSlicesSlice,
       NavigationmenuDocument,
       NavigationmenuDocumentData,
       NavigationmenuDocumentDataSlicesSlice,
@@ -1397,6 +1613,11 @@ declare module "@prismicio/client" {
       PhotosSliceDefaultItem,
       PhotosSliceVariation,
       PhotosSliceDefault,
+      ProjectAndSubprojectsSlice,
+      ProjectAndSubprojectsSliceDefaultPrimary,
+      ProjectAndSubprojectsSliceDefaultItem,
+      ProjectAndSubprojectsSliceVariation,
+      ProjectAndSubprojectsSliceDefault,
       ProjectsSlice,
       ProjectsSliceDefaultPrimary,
       ProjectsSliceDefaultItem,
@@ -1410,6 +1631,10 @@ declare module "@prismicio/client" {
       SocialImpactSliceDefaultPrimary,
       SocialImpactSliceVariation,
       SocialImpactSliceDefault,
+      SocialMediaSlice,
+      SocialMediaSliceDefaultItem,
+      SocialMediaSliceVariation,
+      SocialMediaSliceDefault,
       StackholdersSlice,
       StackholdersSliceDefaultPrimary,
       StackholdersSliceDefaultItem,
