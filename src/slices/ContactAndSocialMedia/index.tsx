@@ -2,7 +2,7 @@ import { LinkFieldProps } from "@/models/links.model";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import mockSliceContent from './mocks.json'
+import mockSliceContent from "./mocks.json";
 
 import styles from "./styles.module.css";
 
@@ -18,7 +18,6 @@ export type ContactAndSocialMediaProps =
 const ContactAndSocialMedia = ({
   slice,
 }: ContactAndSocialMediaProps): JSX.Element => {
-
   return (
     <section
       data-slice-type={slice.slice_type}

@@ -1,8 +1,12 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { JSXMapSerializer, PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+  JSXMapSerializer,
+  PrismicRichText,
+  SliceComponentProps,
+} from "@prismicio/react";
 
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
@@ -29,11 +33,19 @@ const ProjectAndSubprojects = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={styles['sectionContainer']}
+      className={styles["sectionContainer"]}
     >
-      <h2 className={styles['sectionTitle']}>{slice.primary.title}</h2>
-      <PrismicNextImage field={slice.primary.projectimage} width={800}  height={500} className={styles['mainProjectImage']} />
-      <PrismicRichText field={slice.primary.projectbody} components={components} />
+      <h2 className={styles["sectionTitle"]}>{slice.primary.title}</h2>
+      <PrismicNextImage
+        field={slice.primary.projectimage}
+        width={800}
+        height={500}
+        className={styles["mainProjectImage"]}
+      />
+      <PrismicRichText
+        field={slice.primary.projectbody}
+        components={components}
+      />
 
       <div className={styles["projectContainer"]}>
         {slice.items.map((item, index) => (

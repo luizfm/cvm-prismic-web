@@ -9,10 +9,10 @@ import styles from "./index.module.css";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => {
-    return <h1 className={styles.heading1}>{children}</h1>
+    return <h1 className={styles.heading1}>{children}</h1>;
   },
   paragraph: ({ children }) => {
-    return <p className={styles.paragraph}>{children}</p>
+    return <p className={styles.paragraph}>{children}</p>;
   },
   label: ({ node, children }) => {
     if (node.data.label === "codespan") {
