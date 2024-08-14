@@ -62,4 +62,35 @@
             background-color: rgb(237, 237, 237);
         }
     }
+
+    .socialMediaBox {
+        margin-top: 32px;
+        padding: 64px 0px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+        .socialMediaLink {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 16px;
+            text-decoration: none;
+        }
+
+        .socialMediaLink:hover {
+            background-color: transparent;
+            filter: brightness(0.9);
+        }
+
+        .imageWrapper {
+            height: 48px;
+            width: 48px;
+            position: relative;
+    
+            .image {
+                object-fit: cover;
+            }
+        }
+    }
 }

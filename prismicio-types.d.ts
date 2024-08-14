@@ -888,6 +888,36 @@ export interface NewsCardListSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   sectiontitle: prismic.KeyTextField;
+
+  /**
+   * social media label field in *NewsCardList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_card_list.primary.social_media_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  social_media_label: prismic.KeyTextField;
+
+  /**
+   * social media image field in *NewsCardList → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_card_list.primary.social_media_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  social_media_image: prismic.ImageField<never>;
+
+  /**
+   * social_media_link field in *NewsCardList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_card_list.primary.social_media_link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  social_media_link: prismic.KeyTextField;
 }
 
 /**

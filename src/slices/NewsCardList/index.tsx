@@ -1,5 +1,5 @@
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicLink, SliceComponentProps } from "@prismicio/react";
 
 import styles from "./styles.module.css";
@@ -39,6 +39,22 @@ const NewsCardList = ({ slice }: NewsCardListProps): JSX.Element => {
             </div>
           </PrismicLink>
         ))}
+      </div>
+      <div className={styles["socialMediaBox"]}>
+        <h3>Veja mais notícias também no {slice.primary.social_media_label}</h3>
+        <PrismicNextLink
+          href={slice.primary?.social_media_link || "/"}
+          className={styles["socialMediaLink"]}
+        >
+          <div className={styles["imageWrapper"]}>
+            <PrismicNextImage
+              field={slice.primary.social_media_image}
+              className={styles["image"]}
+              fill
+            />
+          </div>
+          <p>{slice.primary.social_media_label}</p>
+        </PrismicNextLink>
       </div>
     </section>
   );
