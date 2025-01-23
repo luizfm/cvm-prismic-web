@@ -11,37 +11,7 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {
-        "sectiontitle": {
-          "type": "Text",
-          "config": {
-            "label": "sectionTitle",
-            "placeholder": ""
-          }
-        },
-        "social_media_label": {
-          "type": "Text",
-          "config": {
-            "label": "social media label",
-            "placeholder": ""
-          }
-        },
-        "social_media_image": {
-          "type": "Image",
-          "config": {
-            "label": "social media image",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "social_media_link": {
-          "type": "Text",
-          "config": {
-            "label": "social_media_link",
-            "placeholder": ""
-          }
-        }
-      },
+      "primary": {},
       "items": {
         "newstitle": {
           "type": "Text",

@@ -33,14 +33,14 @@ const Photos = ({ slice }: PhotosProps): JSX.Element => {
       <h1 className={styles["sectionTitle"]}>{slice.primary.sectiontitle}</h1>
       <div className={styles["photosContainer"]}>
         {slice.items.map((photo, index) => (
-          <PrismicNextImage
-            key={`${index}`}
-            field={photo.picture}
-            className={styles["image"]}
-            height={180}
-            width={180}
-            onClick={() => onPhotoClick(photo.picture)}
-          />
+          <div key={`${index}`} className={styles["photoWrapper"]}>
+            <PrismicNextImage
+              field={photo.picture}
+              className={styles["image"]}
+              fill
+              onClick={() => onPhotoClick(photo.picture)}
+            />
+          </div>
         ))}
       </div>
 

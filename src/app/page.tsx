@@ -5,6 +5,7 @@ import * as prismic from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { InstagramPostsProvider } from "./context/instagram-posts.context";
 
 /**
  * This component renders your homepage.
@@ -35,6 +36,13 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Index() {
   const client = createClient();
   const home = await client.getByUID("page", "home");
+  const instagramPosts = await fetch(
+    `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}`
+  ).then((data) => data.json());
 
-  return <SliceZone slices={home?.data.slices} components={components} />;
+  return (
+    <InstagramPostsProvider posts={instagramPosts.data}>
+      <SliceZone slices={home?.data.slices} components={components} />
+    </InstagramPostsProvider>
+  );
 }

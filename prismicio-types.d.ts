@@ -876,51 +876,6 @@ type NewsSliceVariation = NewsSliceDefault;
 export type NewsSlice = prismic.SharedSlice<"news", NewsSliceVariation>;
 
 /**
- * Primary content in *NewsCardList → Primary*
- */
-export interface NewsCardListSliceDefaultPrimary {
-  /**
-   * sectionTitle field in *NewsCardList → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: news_card_list.primary.sectiontitle
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  sectiontitle: prismic.KeyTextField;
-
-  /**
-   * social media label field in *NewsCardList → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: news_card_list.primary.social_media_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  social_media_label: prismic.KeyTextField;
-
-  /**
-   * social media image field in *NewsCardList → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: news_card_list.primary.social_media_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  social_media_image: prismic.ImageField<never>;
-
-  /**
-   * social_media_link field in *NewsCardList → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: news_card_list.primary.social_media_link
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  social_media_link: prismic.KeyTextField;
-}
-
-/**
  * Primary content in *NewsCardList → Items*
  */
 export interface NewsCardListSliceDefaultItem {
@@ -974,7 +929,7 @@ export interface NewsCardListSliceDefaultItem {
  */
 export type NewsCardListSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<NewsCardListSliceDefaultPrimary>,
+  Record<string, never>,
   Simplify<NewsCardListSliceDefaultItem>
 >;
 
@@ -1629,7 +1584,6 @@ declare module "@prismicio/client" {
       NewsSliceVariation,
       NewsSliceDefault,
       NewsCardListSlice,
-      NewsCardListSliceDefaultPrimary,
       NewsCardListSliceDefaultItem,
       NewsCardListSliceVariation,
       NewsCardListSliceDefault,

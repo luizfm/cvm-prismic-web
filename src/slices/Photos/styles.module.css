@@ -12,15 +12,22 @@
     }
 
     .photosContainer {
-        position: relative;
         display: flex;
         flex-wrap: wrap;
         gap: 32px;
 
-        .image {
-            object-fit: contain;
-            border-radius: 8px;
-            cursor: pointer;
+        .photoWrapper {
+            height: 180px;
+            width:180px;
+            position: relative;
+
+            .image {
+                object-fit: cover;
+                border-radius: 8px;
+                cursor: pointer;
+            }
         }
+
+
     }
 }
