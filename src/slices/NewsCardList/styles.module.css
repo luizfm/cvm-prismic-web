@@ -79,7 +79,8 @@
 
         .postLink {
             text-decoration: none;
-            
+            color: black;
+
             .instagramCard {
                 width: 250px;
                 height: 400px;
@@ -101,11 +102,12 @@
                 }
     
                 .postCaption {
-                    margin-left: 16px;
+                    margin: 0 16px;
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 3;
-                    line-clamp: 3;
+                    -webkit-line-clamp: 4;
+                    line-clamp: 4;
+                    overflow: hidden;
                 }
             }
         }

@@ -47,9 +47,9 @@ const NewsCardList = ({ slice }: NewsCardListProps): JSX.Element => {
         ))}
       </div>
 
-      <h3 className={styles["socialMediaSectionTitle"]}>
-        Também estamos no instagram. Veja nossas últimas publicações
-      </h3>
+      <h2 className={styles["socialMediaSectionTitle"]}>
+        Também estamos no instagram. Veja nossas últimas publicações:
+      </h2>
       <div className={styles["socialMediaBox"]}>
         {instagramPosts.slice(0, 3).map((post) => (
           <a
@@ -67,9 +67,10 @@ const NewsCardList = ({ slice }: NewsCardListProps): JSX.Element => {
                   className={styles["image"]}
                 />
               </div>
-              {!!post.caption && (
-                <p className={styles["postCaption"]}>{post.caption}</p>
-              )}
+
+              <p className={styles["postCaption"]}>
+                {post?.caption ?? "Nova publicação da CVM 💫"}
+              </p>
             </div>
           </a>
         ))}
